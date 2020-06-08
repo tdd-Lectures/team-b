@@ -1,0 +1,70 @@
+@startuml
+
+class Vehicle {
+    vehicleId: string
+    model: string
+    yearOfConstruction: number
+}
+
+class VehicleModel {
+    vehicleId: string
+    model: string
+    dateOfConstruction: date
+}
+
+enum SecurityCheckState {
+  AUTHORIZED
+  UNSAFE
+  REMOVED
+}
+
+class CheckResult {
+    userId: string
+    state: SecurityCheckState
+}
+
+class VehicleServices {
+    getVehicles(userId: string): Vehicle[]
+    getVehicle(userId: string, vehicleId: string): Vehicle
+}
+
+class SecurityGateway {
+    checkUser(userId: string): CheckResult
+}
+
+class VehicleGateway {
+    getVehicles(userId: string): VehicleModel[]
+    getVehicle(userId: string, vehicleId: string): VehicleModel
+}
+
+class VehiclesController {
+    getVehicles(userId: string): Vehicle[]
+    getVehicle(userId: string, vehicleId: string): Vehicle
+}
+
+VehicleServices o--> SecurityGateway
+VehicleServices o--> VehicleGateway
+VehiclesController o--> VehicleServices
+
+SecurityGateway --> CheckResult : returns
+CheckResult *-> SecurityCheckState : state
+
+VehicleModel <- VehicleGateway: returns
+
+Vehicle <- VehicleServices : returns
+
+hide fields
+
+show Vehicle fields
+hide Vehicle methods
+
+show SecurityCheckState fields
+hide SecurityCheckState methods
+
+show CheckResult fields
+hide CheckResult methods
+
+show VehicleModel fields
+hide VehicleModel methods
+
+@enduml

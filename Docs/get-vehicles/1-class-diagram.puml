@@ -1,0 +1,42 @@
+@startuml
+
+class Vehicle {
+    vehicleId: string
+    model: string
+    yearOfConstruction: number
+}
+
+class VehicleModel {
+    vehicleId: string
+    model: string
+    dateOfConstruction: date
+}
+
+class VehicleServices {
+    getVehicles(userId: string): Vehicle[]
+}
+
+class VehicleGateway {
+    getVehicles(userId: string): VehicleModel[]
+}
+
+class VehiclesController {
+    getVehicles(userId: string): Vehicle[]
+}
+
+VehicleServices o--> VehicleGateway
+VehiclesController o--> VehicleServices
+VehicleModel <- VehicleGateway: returns
+Vehicle <- VehicleServices : returns
+
+hide fields
+
+show Vehicle fields
+hide Vehicle methods
+
+
+
+show VehicleModel fields
+hide VehicleModel methods
+
+@enduml

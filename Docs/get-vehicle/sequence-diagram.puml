@@ -1,0 +1,20 @@
+@startuml
+
+
+Client -> API: GET api/v1/vehicles/{user_id}/{vehicle_id}
+activate API
+
+API -> Security: GET api/security/check/{user_id}
+activate Security
+API <-- Security: UserModel
+deactivate Security
+
+API -> Repository: GET api/repository/vehicles/{user_id}/vehicle/{vehicle_id}
+activate Repository
+API <-- Repository: VehicleModel
+deactivate Repository
+
+Client <-- API: Vehicle
+deactivate API
+
+@enduml
