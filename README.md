@@ -3,7 +3,7 @@
 Implement an API that get vehicles from a another service. This service could be a database or something else.
 
 ### Sequence Diagram
-![sequence diagram](docs/get-vehicles/sequence_diagram.png)
+![sequence diagram](Docs/get-vehicles/sequence_diagram.png)
 
 ### Class Diagram
-![class diagram](docs/get-vehicles/1_class_diagram.png)
+![class diagram](Docs/get-vehicles/1_class_diagram.png)
