@@ -1,6 +1,6 @@
 # team-b
 
-Páris was here
+Páris was here.
 
 Teste Pedro
 
