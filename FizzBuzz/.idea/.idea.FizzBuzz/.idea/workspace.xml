@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="269d72d2-72c0-4071-b2e5-1a19a6ecbcbe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FizzBuzz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FizzBuzz/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTest1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FizzBuzz.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/FizzBuzz.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTest1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/FizzBuzzTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="ba325fa5-201b-43d1-a5b8-5f3540784954" />
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -47,12 +49,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652778030173</updated>
-      <workItem from="1652778038612" duration="838000" />
+      <workItem from="1652778038612" duration="4036000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="162" />
+    <coverage-tree-state>
+      <expand />
+      <select />
+    </coverage-tree-state>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
