@@ -1,5 +1,8 @@
-﻿namespace Scheduler;
+﻿using System;
 
-public class Class1
+namespace Scheduler
 {
+    public class Class1
+    {
+    }
 }

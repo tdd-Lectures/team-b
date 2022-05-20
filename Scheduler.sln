@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler", "Scheduler\Scheduler.csproj", "{70747756-D059-43FF-A7CE-2132B0A9DF70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler", "Scheduler\Scheduler.csproj", "{86AFCC0E-3021-4FCB-83D4-9F28E7BDE188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler.Tests", "Scheduler.Tests\Scheduler.Tests.csproj", "{F2C9CCE7-1F86-4377-9E7E-F92A3FECCF1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduler.Tests", "Scheduler.Tests\Scheduler.Tests.csproj", "{17229A87-19ED-4C8E-8B97-CE628B6A3216}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70747756-D059-43FF-A7CE-2132B0A9DF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70747756-D059-43FF-A7CE-2132B0A9DF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70747756-D059-43FF-A7CE-2132B0A9DF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70747756-D059-43FF-A7CE-2132B0A9DF70}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2C9CCE7-1F86-4377-9E7E-F92A3FECCF1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2C9CCE7-1F86-4377-9E7E-F92A3FECCF1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2C9CCE7-1F86-4377-9E7E-F92A3FECCF1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2C9CCE7-1F86-4377-9E7E-F92A3FECCF1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86AFCC0E-3021-4FCB-83D4-9F28E7BDE188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86AFCC0E-3021-4FCB-83D4-9F28E7BDE188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86AFCC0E-3021-4FCB-83D4-9F28E7BDE188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86AFCC0E-3021-4FCB-83D4-9F28E7BDE188}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17229A87-19ED-4C8E-8B97-CE628B6A3216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17229A87-19ED-4C8E-8B97-CE628B6A3216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17229A87-19ED-4C8E-8B97-CE628B6A3216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17229A87-19ED-4C8E-8B97-CE628B6A3216}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
