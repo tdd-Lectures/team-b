@@ -1,0 +1,19 @@
+@startuml
+
+Client -> API: POST api/v1/vehicles/{user_id}/buy \nBody: Vehicle
+activate API
+
+API -> Security: GET api/security/check/{user_id}
+activate Security
+API <-- Security: UserModel
+deactivate Security
+
+API -> Repository: POST api/repository/vehicles/{user_id}/store\nBody: VehicleInternalModel
+activate Repository
+API <-- Repository: 201: Created
+deactivate Repository
+
+Client <-- API: BuyResult
+deactivate API
+
+@enduml
