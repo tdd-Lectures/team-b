@@ -1,6 +1,6 @@
 namespace Vehicles.Services
 {
-    public class Vehicle
+    public record Vehicle
     {
         public int YearOfConstruction { get; set; }
         public string VehicleId { get; set; }
