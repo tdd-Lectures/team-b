@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Vehicles.Gateways;
 using Vehicles.Services;
 
 namespace Vehicles.Controllers
@@ -18,7 +20,18 @@ namespace Vehicles.Controllers
         [HttpGet]
         public IActionResult GetVehicles(string userId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return Ok(_services.GetVehicles(userId));
+            }
+            catch (InvalidUserException)
+            {
+                return BadRequest();
+            }
+            catch (GatewayException)
+            {
+                return StatusCode(500);
+            }
         }
     }
 }
