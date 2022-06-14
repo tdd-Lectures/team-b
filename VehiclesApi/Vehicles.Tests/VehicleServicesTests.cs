@@ -1,5 +1,3 @@
-using System;
-using Moq;
 using NUnit.Framework;
 using Vehicles.Gateways;
 using Vehicles.Services;
@@ -11,7 +9,9 @@ namespace Vehicles.Tests
 
         private static VehicleServices MakeVehicleServices()
         {
-            return new VehicleServices(VehicleGatewayFactory.MakeVehicleGateway());
+            return new VehicleServices(
+                VehicleGatewayFactory.MakeVehicleGateway(), SecurityGatewayFactory.MakeSecurityGateway()
+            );
         }
 
         [Test]
@@ -80,6 +80,23 @@ namespace Vehicles.Tests
             var services = MakeVehicleServices();
 
             Assert.Throws<GatewayException>(() => services.GetVehicles("gateway exception"));
+        }
+
+
+        [Test]
+        public void Getting_vehicles_from_unsafe_user_returns_UnsafeUserException()
+        {
+            var services = MakeVehicleServices();
+
+            Assert.Throws<UnsafeUserException>(() => services.GetVehicles("Unsafe User"));
+        }
+        
+        [Test]
+        public void Getting_vehicles_from_removed_user_returns_RemovedUserException()
+        {
+            var services = MakeVehicleServices();
+
+            Assert.Throws<RemovedUserException>(() => services.GetVehicles("Removed User"));
         }
     }
 }

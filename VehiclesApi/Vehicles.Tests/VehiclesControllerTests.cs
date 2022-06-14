@@ -12,7 +12,7 @@ namespace Vehicles.Tests
         private static VehiclesController MakeVehiclesController()
         {
             return new VehiclesController(
-                new VehicleServices(VehicleGatewayFactory.MakeVehicleGateway())
+                new VehicleServices(VehicleGatewayFactory.MakeVehicleGateway(), SecurityGatewayFactory.MakeSecurityGateway())
             );
         }
 
