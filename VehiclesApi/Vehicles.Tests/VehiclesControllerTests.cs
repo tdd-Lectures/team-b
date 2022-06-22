@@ -121,7 +121,7 @@ namespace Vehicles.Tests
             ));
         }
         [Test]
-        public void Getting_a_non_existing_vehicle_for_user_2_returns_404_NotFound()
+        public void Getting_a_non_existing_vehicle_for_user_2_returns_404_not_found()
         {
             var controller = MakeVehiclesController();
             var result = controller.GetVehicle("user 2","non existing vehicle") as StatusCodeResult;
@@ -130,7 +130,7 @@ namespace Vehicles.Tests
         }
         
         [Test]
-        public void Getting_a_vehicle_for_user_1_returns_404_NotFound()
+        public void Getting_a_vehicle_for_user_1_returns_404_not_found()
         {
             var controller = MakeVehiclesController();
 
@@ -138,6 +138,18 @@ namespace Vehicles.Tests
             
             Assert.That(result, Is.Not.Null);
             Assert.That(result.StatusCode, Is.EqualTo(404));
+            
+        }
+        
+        // [Test]
+        public void Getting_vehicle_1_for_removed_user_returns_403_status_code()
+        {
+            var controller = MakeVehiclesController();
+
+            var result = controller.GetVehicle("Removed User","1") as StatusCodeResult;
+            
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.StatusCode, Is.EqualTo(403));
             
         }
         

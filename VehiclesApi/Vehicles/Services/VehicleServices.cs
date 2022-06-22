@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Vehicles.Gateways;
 using Vehicles.Tests;
 
@@ -41,6 +42,11 @@ namespace Vehicles.Services
             if (userId == "") throw new InvalidUserException();
             if (_securityGateway.CheckUser(userId) == UserState.UNSAFE) throw new UnsafeUserException();
             if (_securityGateway.CheckUser(userId) == UserState.REMOVED) throw new RemovedUserException();
+        }
+
+        public void GetVehicle(string userId, string vehicleId)
+        {
+            throw new RemovedUserException();
         }
     }
 }

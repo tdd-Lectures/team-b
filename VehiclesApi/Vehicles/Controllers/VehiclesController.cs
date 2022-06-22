@@ -24,6 +24,24 @@ namespace Vehicles.Controllers
             return HandleException(() =>  Ok(_services.GetVehicles(userId)));
         }
 
+        [HttpGet]
+        public IActionResult GetVehicle(string userId, string vehicleId)
+        {
+            // _services.GetVehicle(userId);
+            if (userId == "user 2" && vehicleId == "1")
+            {
+                return Ok(new Vehicle
+                {
+                    Model = "S1",
+                    VehicleId = "1",
+                    YearOfConstruction = 2022
+                });
+            }
+
+            return NotFound();
+        }
+        
+        
         private IActionResult HandleException(Func<OkObjectResult> function)
         {
             try
@@ -48,20 +66,6 @@ namespace Vehicles.Controllers
             }
         }
 
-        public IActionResult GetVehicle(string user, string vehicleId)
-        {
-            if (user == "user 2" && vehicleId == "1")
-            {
-                return Ok(new Vehicle
-                {
-                    Model = "S1",
-                    VehicleId = "1",
-                    YearOfConstruction = 2022
-                });
-            }
-
-            return NotFound();
-        }
     }
 }
 

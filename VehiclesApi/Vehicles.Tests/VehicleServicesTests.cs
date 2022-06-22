@@ -98,5 +98,13 @@ namespace Vehicles.Tests
 
             Assert.Throws<RemovedUserException>(() => services.GetVehicles("Removed User"));
         }
+        
+        [Test]
+        public void Getting_vehicle_from_removed_user_returns_RemovedUserException()
+        {
+            var services = MakeVehicleServices();
+
+            Assert.Throws<RemovedUserException>(() => services.GetVehicle("Removed User","any"));
+        }
     }
 }
