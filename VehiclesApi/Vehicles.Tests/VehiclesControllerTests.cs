@@ -111,15 +111,26 @@ namespace Vehicles.Tests
             
             Assert.That(result, Is.Not.Null);
             Assert.That(result.StatusCode, Is.EqualTo(200));
-            Assert.That(result.Value as IEnumerable<Vehicle>, Is.EqualTo(new []
-            {
+            Assert.That(result.Value as Vehicle, Is.EqualTo( 
                 new Vehicle
                 {
                     Model = "S1",
                     VehicleId = "1",
                     YearOfConstruction = 2022
                 }
-            }));
+            ));
         }
+        [Test]
+        public void Getting_a_vehicle_for_user_1_returns_404_NotFound()
+        {
+            var controller = MakeVehiclesController();
+
+            var result = controller.GetVehicle("user 1","1") as StatusCodeResult;
+            
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.StatusCode, Is.EqualTo(404));
+            
+        }
+        
     }
 }

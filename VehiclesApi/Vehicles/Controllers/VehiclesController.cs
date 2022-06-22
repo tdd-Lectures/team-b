@@ -48,9 +48,19 @@ namespace Vehicles.Controllers
             }
         }
 
-        public ObjectResult GetVehicle(string user, string s)
+        public IActionResult GetVehicle(string user, string vehicleId)
         {
-            throw new NotImplementedException();
+            if (user == "user 2")
+            {
+                return Ok(new Vehicle
+                {
+                    Model = "S1",
+                    VehicleId = "1",
+                    YearOfConstruction = 2022
+                });
+            }
+
+            return NotFound();
         }
     }
 }
