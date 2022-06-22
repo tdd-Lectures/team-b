@@ -50,7 +50,7 @@ namespace Vehicles.Controllers
 
         public IActionResult GetVehicle(string user, string vehicleId)
         {
-            if (user == "user 2")
+            if (user == "user 2" && vehicleId == "1")
             {
                 return Ok(new Vehicle
                 {

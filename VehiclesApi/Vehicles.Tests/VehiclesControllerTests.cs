@@ -121,6 +121,15 @@ namespace Vehicles.Tests
             ));
         }
         [Test]
+        public void Getting_a_non_existing_vehicle_for_user_2_returns_404_NotFound()
+        {
+            var controller = MakeVehiclesController();
+            var result = controller.GetVehicle("user 2","non existing vehicle") as StatusCodeResult;
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.StatusCode, Is.EqualTo(404));
+        }
+        
+        [Test]
         public void Getting_a_vehicle_for_user_1_returns_404_NotFound()
         {
             var controller = MakeVehiclesController();
