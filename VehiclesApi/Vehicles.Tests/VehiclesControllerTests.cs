@@ -100,5 +100,26 @@ namespace Vehicles.Tests
                 }
             }));
         }
+        
+        //(userid, vehicleid) returns vehicle
+        [Test]
+        public void Getting_vehicle_1_for_user_2_returns_vehicle_1()
+        {
+            var controller = MakeVehiclesController();
+
+            var result = controller.GetVehicle("user 2","1") as ObjectResult;
+            
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.StatusCode, Is.EqualTo(200));
+            Assert.That(result.Value as IEnumerable<Vehicle>, Is.EqualTo(new []
+            {
+                new Vehicle
+                {
+                    Model = "S1",
+                    VehicleId = "1",
+                    YearOfConstruction = 2022
+                }
+            }));
+        }
     }
 }

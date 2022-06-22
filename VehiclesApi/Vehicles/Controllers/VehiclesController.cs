@@ -24,11 +24,11 @@ namespace Vehicles.Controllers
             return HandleException(() =>  Ok(_services.GetVehicles(userId)));
         }
 
-        private IActionResult HandleException(Func<OkObjectResult> okObjectResult)
+        private IActionResult HandleException(Func<OkObjectResult> function)
         {
             try
             {
-                return okObjectResult();
+                return function();
             }
             catch (UnsafeUserException)
             {
@@ -46,6 +46,11 @@ namespace Vehicles.Controllers
             {
                 return StatusCode(500);
             }
+        }
+
+        public ObjectResult GetVehicle(string user, string s)
+        {
+            throw new NotImplementedException();
         }
     }
 }
