@@ -22,7 +22,6 @@ namespace Vehicles.Services
             ValidateUser(userId);
             try
             {
-                
                 return _vehicleGateway.GetVehicles(userId)
                     .Select(e => new Vehicle
                     {

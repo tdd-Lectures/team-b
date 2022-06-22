@@ -39,6 +39,17 @@ namespace Vehicles.Tests
         }
         
         [Test]
+        public void Getting_vehicles_for_removed_user_returns_403_status_code()
+        {
+            var controller = MakeVehiclesController();
+
+            var result = controller.GetVehicles("Removed User") as StatusCodeResult;
+            
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result.StatusCode, Is.EqualTo(403));
+        }
+        
+        [Test]
         public void Getting_vehicles_for_a_user_that_doesnt_have_vehicles_returns_200_status_code()
         {
             var controller = MakeVehiclesController();
