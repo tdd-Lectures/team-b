@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Vehicles.Gateways;
 using Vehicles.Services;
+using Vehicles.Tests;
 
 namespace Vehicles.Controllers
 {
@@ -23,6 +24,14 @@ namespace Vehicles.Controllers
             try
             {
                 return Ok(_services.GetVehicles(userId));
+            }
+            catch (UnsafeUserException)
+            {
+                return StatusCode(401);
+            }
+            catch (RemovedUserException)
+            {
+                return StatusCode(403);
             }
             catch (InvalidUserException)
             {
