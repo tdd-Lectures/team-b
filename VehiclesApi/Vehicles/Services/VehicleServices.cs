@@ -44,9 +44,11 @@ namespace Vehicles.Services
             if (_securityGateway.CheckUser(userId) == UserState.REMOVED) throw new RemovedUserException();
         }
 
-        public void GetVehicle(string userId, string vehicleId)
+        public Vehicle GetVehicle(string userId, string vehicleId)
         {
-            throw new RemovedUserException();
+            ValidateUser(userId);
+
+            return null;
         }
     }
 }
