@@ -19,16 +19,7 @@ namespace Vehicles.Services
 
         public IEnumerable<Vehicle> GetVehicles(string userId)
         {
-            if (userId == "") throw new InvalidUserException();
-
-            if ( _securityGateway.CheckUser(userId)==UserState.UNSAFE)
-                throw new UnsafeUserException();
-
-            if ( _securityGateway.CheckUser(userId)==UserState.REMOVED)
-            {
-                throw new RemovedUserException();
-            }
-            
+            ValidateUser(userId);
             try
             {
                 
@@ -44,7 +35,13 @@ namespace Vehicles.Services
             {
                 throw new GatewayException();
             }
-    
+        }
+
+        private void ValidateUser(string userId)
+        {
+            if (userId == "") throw new InvalidUserException();
+            if (_securityGateway.CheckUser(userId) == UserState.UNSAFE) throw new UnsafeUserException();
+            if (_securityGateway.CheckUser(userId) == UserState.REMOVED) throw new RemovedUserException();
         }
     }
 }
