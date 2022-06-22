@@ -21,9 +21,14 @@ namespace Vehicles.Controllers
         [HttpGet]
         public IActionResult GetVehicles(string userId)
         {
+            return HandleException(() =>  Ok(_services.GetVehicles(userId)));
+        }
+
+        private IActionResult HandleException(Func<OkObjectResult> okObjectResult)
+        {
             try
             {
-                return Ok(_services.GetVehicles(userId));
+                return okObjectResult();
             }
             catch (UnsafeUserException)
             {
@@ -44,3 +49,4 @@ namespace Vehicles.Controllers
         }
     }
 }
+
